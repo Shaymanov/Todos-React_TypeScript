@@ -1,48 +1,39 @@
-import './ToDoList.scss'
+// import './ToDoList.scss'
 import { ToDoListItem } from './ToDoListItem/ToDoListItem'
 import { ToDo } from '../../models/todo-item'
+import { ToDoContainer, ToDoListUl } from './ToDoList.styled'
 
-export const ToDoList = (props: {
-  todos: ToDo[]
-  updateToDo: Function
-  deleteToDo: Function
-}) => {
-  const checkedList = () => {
+export const ToDoList = (props: { todos: ToDo[], updateToDo: Function, deleteToDo: Function, }) =>
+{
+  const checkedList = () =>
+  {
     return props.todos
       .filter((item) => !item.isDone)
-      .map((item, idx) => {
+      .map((item, idx) =>
+      {
         return (
-          <ToDoListItem
-            key={idx}
-            toDoItem={item}
-            updateToDo={props.updateToDo}
-            deleteToDo={props.deleteToDo}
-          />
+          <ToDoListItem key={idx} toDoItem={item} updateToDo={props.updateToDo} deleteToDo={props.deleteToDo} />
         )
       })
   }
 
-  const unCheckedList = () => {
+  const unCheckedList = () =>
+  {
     return props.todos
       .filter((item) => item.isDone)
-      .map((item, idx) => {
+      .map((item, idx) =>
+      {
         return (
-          <ToDoListItem
-            key={idx}
-            toDoItem={item}
-            updateToDo={props.updateToDo}
-            deleteToDo={props.deleteToDo}
-          />
+          <ToDoListItem key={idx} toDoItem={item} updateToDo={props.updateToDo} deleteToDo={props.deleteToDo} />
         )
       })
   }
 
-  //-------------------------------------------------------------------
 
   return (
-    <div className="todo-container">
-      <ul className="todo-list failed">{checkedList()}</ul>
-      <ul className="todo-list completed">{unCheckedList()}</ul>
-    </div>
+    <ToDoContainer>
+      <ToDoListUl className="todo-list failed">{checkedList()}</ToDoListUl>
+      <ToDoListUl className="todo-list completed">{unCheckedList()}</ToDoListUl>
+    </ToDoContainer>
   )
 }

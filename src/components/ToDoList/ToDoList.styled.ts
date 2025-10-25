@@ -1,38 +1,39 @@
-.todo-container {
+import styled from "styled-components"
+
+export const ToDoContainer = styled.div`
     width: 100%;
     padding: 15px;
-}
+`
 
-.todo-list {
+export const ToDoListUl = styled.ul`
     width: 100%;
     margin-top: 20px;
     margin-bottom: 20px;
     padding-left: 0;
     list-style: none;
-}
 
-.todo-list.failed:empty:after {
+    &.failed:empty:after {
     content: 'Нет задач на выполнение';
-}
+    }
 
-.todo-list.failed:after {
+    &.failed:after {
     width: 100%;
     display: block;
     text-align: center;
     font-size: 12px;
     color: #aaa;
-}
+    }
 
-.todo-list.completed {
+    &.completed {
     position: relative;
     padding: 60px 0 0 0;
-}
+    }
 
-.todo-list.completed:empty:after {
+    &.completed:empty:after {
     content: 'Нет выполненых задач';
-}
+    }
 
-.todo-list.completed:before {
+    &.completed:before {
     content: '';
     width: 150px;
     height: 1px;
@@ -41,12 +42,13 @@
     position: absolute;
     top: 25px;
     left: calc(50% - 75px);
-}
+    }
 
-.todo-list.completed:after {
+    &.completed:after {
     width: 100%;
     display: block;
     text-align: center;
     font-size: 12px;
     color: #aaa;
-}
+    }
+`
