@@ -1,14 +1,17 @@
+// ✅ Исправленный GlobalStyle.tsx
 import { createGlobalStyle } from "styled-components";
-import normalize from "styled-normalize";
+import normalize from 'styled-normalize';
 
 export const GlobalStyle = createGlobalStyle`
     ${normalize}
+
     * {
         box-sizing: border-box;
     }
 
     body {
-        background-color: #edf0f1;
+        transition: background-color .2s;
+        background-color: ${({ theme }) => theme.colors.backgroundSecondary};
         padding: 50px 0 0 0;
         font-family: 'Roboto', sans-serif;
         font-size: 16px;
@@ -22,4 +25,4 @@ export const GlobalStyle = createGlobalStyle`
         align-items: center;
         padding: 20px;
     }
-`
+`;

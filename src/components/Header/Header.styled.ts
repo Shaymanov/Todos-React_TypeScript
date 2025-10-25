@@ -7,7 +7,8 @@ export const HeaderBlock = styled.header`
     right: 0;
     left: 0;
     height: 50px;
-    background-color: #4682b4;
+    transition: background-color .2s;
+    background-color: ${({ theme }) => theme.colors.backgroundPrimary};
     display: flex;
     align-items: center;
 `
@@ -20,6 +21,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     gap: 20px;
+    position: relative;
 `
 
 export const StyledNavLink = styled(NavLink)`
@@ -29,10 +31,17 @@ export const StyledNavLink = styled(NavLink)`
     transition: color 0.3s ease;
 
     &.active {
-        color: #ffffff99;
+        color: #c4c4c499;
     }
 
     &:hover {
         color: #e0e0e0;
     }
+`
+
+export const ToggleButton = styled.div`
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%)
 `
