@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
 export const HeaderBlock = styled.header`
@@ -19,14 +19,20 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 20px;
 `
 
 export const StyledNavLink = styled(NavLink)`
     text-decoration: none;
     padding: 10px;
     color: #fff;
-    
-    &.active{
-    color: #ffffff33;
+    transition: color 0.3s ease;
+
+    &.active {
+        color: #ffffff99;
+    }
+
+    &:hover {
+        color: #e0e0e0;
     }
 `
